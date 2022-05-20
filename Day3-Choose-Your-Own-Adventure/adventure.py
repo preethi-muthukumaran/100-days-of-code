@@ -1,5 +1,7 @@
 import time
-
+print("Credit: I would like to acknowledge that I got both of the ASCII artworks seen in this game at the following link: https://ascii.co.uk/\n")
+print("Disclaimer: This game is meant to be fun and is completely fictitious. This game is a fun personal project and is not used for any monetary purposes. Any semblance to in real life characters is purely coincidental.\n\n")
+time.sleep(3)
 print("""
 X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X
 |                           ,,'``````````````',,                            |
