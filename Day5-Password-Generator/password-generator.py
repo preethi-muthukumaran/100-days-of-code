@@ -8,39 +8,24 @@ num_letters= int(input("How many letters would you like in your password?\n"))
 num_symbols = int(input(f"How many symbols would you like?\n"))
 num_numbers = int(input(f"How many numbers would you like?\n"))
 
-num = 0
+pass_chars = []
+for num in range(0, num_letters):
+    index = random.randint(0, num_letters - 1)
+    pass_chars.append(letters[index])
+
+for num in range(0, num_symbols):
+    index = random.randint(0, num_symbols - 1)
+    pass_chars.append(symbols[index])
+
+for num in range(0, num_numbers):
+    index = random.randint(0, num_numbers - 1)
+    pass_chars.append(numbers[index])
+
+#Shuffle all the eligible chars for our password
+random.shuffle(pass_chars)
+
 password = ""
-total_chars = num_letters + num_symbols + num_numbers
-cntr_letters = num_letters
-cntr_symbols = num_symbols
-cntr_numbers = num_numbers
+password = password.join(pass_chars)
 
-for x in range(0, total_chars):
-    num = random.randint(1, total_chars)
-
-    if (num >= 1) and (num <= num_letters) and (cntr_letters > 0):
-        index = random.randint(0, len(letters) - 1)
-        password += letters[index]
-        cntr_letters -= 1
-    elif (num > num_letters) and (num <= (num_letters + num_symbols)) and (cntr_symbols > 0):
-        index = random.randint(0, len(symbols) - 1)
-        password += symbols[index]
-        cntr_symbols -= 1
-    elif (num > (num_letters + num_symbols)) and (num <= (num_letters + num_symbols + num_numbers)) and (cntr_numbers > 0):
-        index = random.randint(0, len(numbers) - 1)
-        password += numbers[index]
-        cntr_numbers -= 1
-    else:
-        if (cntr_letters > 0):
-            index = random.randint(0, len(letters) - 1)
-            password += letters[index]
-            cntr_letters -= 1
-        elif (cntr_symbols > 0):
-            index = random.randint(0, len(symbols) - 1)
-            password += symbols[index]
-            cntr_symbols -= 1
-        elif (cntr_numbers > 0):
-            index = random.randint(0, len(numbers) - 1)
-            password += numbers[index]
-            cntr_numbers -= 1
+print("\nSuggested Password: \n")
 print(password)
