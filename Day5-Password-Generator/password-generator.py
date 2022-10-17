@@ -10,15 +10,15 @@ num_numbers = int(input(f"How many numbers would you like?\n"))
 
 pass_chars = []
 for num in range(0, num_letters):
-    index = random.randint(0, num_letters - 1)
+    index = random.randint(0, len(letters) - 1)
     pass_chars.append(letters[index])
 
 for num in range(0, num_symbols):
-    index = random.randint(0, num_symbols - 1)
+    index = random.randint(0, len(symbols) - 1)
     pass_chars.append(symbols[index])
 
 for num in range(0, num_numbers):
-    index = random.randint(0, num_numbers - 1)
+    index = random.randint(0, len(numbers) - 1)
     pass_chars.append(numbers[index])
 
 #Shuffle all the eligible chars for our password
